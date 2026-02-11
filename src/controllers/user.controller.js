@@ -41,12 +41,10 @@ export const update = async (req, res) => {
     const { id } = req.params;
     // Basic validation - can be enhanced with Zod
     if (!req.body.name && !req.body.email && !req.body.role) {
-      return res
-        .status(400)
-        .json({
-          message:
-            'At least one field (name, email, role) is required for update',
-        });
+      return res.status(400).json({
+        message:
+          'At least one field (name, email, role) is required for update',
+      });
     }
 
     const updatedUser = await updateUserById(Number(id), req.body);

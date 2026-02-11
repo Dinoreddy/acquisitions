@@ -13,12 +13,10 @@ export const signup = async (req, res) => {
   try {
     const validation = signUpSchema.safeParse(req.body);
     if (!validation.success) {
-      return res
-        .status(400)
-        .json({
-          message: 'Validation Failed',
-          error: formatValidationErrors(validation.error),
-        });
+      return res.status(400).json({
+        message: 'Validation Failed',
+        error: formatValidationErrors(validation.error),
+      });
     }
 
     const user = await CreateUser(validation.data);
@@ -46,12 +44,10 @@ export const signin = async (req, res) => {
   try {
     const validation = signInSchema.safeParse(req.body);
     if (!validation.success) {
-      return res
-        .status(400)
-        .json({
-          message: 'Validation Failed',
-          error: formatValidationErrors(validation.error),
-        });
+      return res.status(400).json({
+        message: 'Validation Failed',
+        error: formatValidationErrors(validation.error),
+      });
     }
 
     const { email, password } = validation.data;

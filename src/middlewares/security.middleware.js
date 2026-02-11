@@ -50,12 +50,10 @@ const securityMiddleware = async (req, res, next) => {
         ip: req.ip,
         userAgent: req.headers['user-agent'],
       });
-      return res
-        .status(403)
-        .json({
-          error: 'Forbidden',
-          message: 'Request blocked by security policy',
-        });
+      return res.status(403).json({
+        error: 'Forbidden',
+        message: 'Request blocked by security policy',
+      });
     }
 
     if (decision.isDenied() && decision.reason.isRateLimit()) {
