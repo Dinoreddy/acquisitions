@@ -11,15 +11,15 @@ const securityMiddleware = async (req , res , next) =>{
 
         switch (role) {
             case "admin":
-                limit = 20;
+                limit = 30;
                 message = "Admin rate limit exceeded";
                 break;
             case "user":
-                limit = 10;
+                limit = 20;
                 message = "User rate limit exceeded";
                 break;
             default:
-                limit = 5;
+                limit = 10;
                 message = "Guest rate limit exceeded";
                 break;
         }

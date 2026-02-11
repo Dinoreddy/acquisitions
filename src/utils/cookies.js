@@ -6,6 +6,7 @@ export const cookies = {
         secure : config.env === 'production',
         sameSite : 'strict',
         maxAge : 15 * 60 * 1000,
+        path: '/',
     }),
 
     set: (res , name , value , options = {}) => {
