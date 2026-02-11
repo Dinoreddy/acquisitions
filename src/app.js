@@ -23,7 +23,7 @@ app.use(securityMiddleware)
 
 app.get('/', (req, res) => {
   logger.info('Welcome to the Acquisitions API');
-  res.status(200).json({ message: 'Welcome to the Acquisitions API' });
+  res.status(200).json({ message: 'Acquisitions API is running' });
 });
 
 app.get('/health', (req, res) => {

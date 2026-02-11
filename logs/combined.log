@@ -102,3 +102,13 @@
 {"level":"info","message":"127.0.0.1 - - [11/Feb/2026:16:21:17 +0000] \"POST /api/auth/signin?email=dinoreddy%40gmail.com&password=1234567 HTTP/1.1\" 403 59 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-02-11T16:21:17.638Z"}
 {"level":"info","message":"127.0.0.1 - - [11/Feb/2026:16:21:56 +0000] \"POST /api/auth/signin?email=dinoreddy%40gmail.com&password=1234567 HTTP/1.1\" 401 33 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-02-11T16:21:56.111Z"}
 {"level":"info","message":"127.0.0.1 - - [11/Feb/2026:16:22:04 +0000] \"GET /api/users/ HTTP/1.1\" 401 45 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-02-11T16:22:04.185Z"}
+{"level":"info","message":"hello","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.020Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.027Z"}
+{"level":"info","message":"hello","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.034Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.042Z"}
+{"level":"info","message":"Welcome to the Acquisitions API","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.058Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET / HTTP/1.1\" 200 41 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.059Z"}
+{"level":"info","message":"Welcome to the Acquisitions API","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.073Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET / HTTP/1.1\" 200 41 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.075Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET /not-found HTTP/1.1\" 404 21 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.085Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [11/Feb/2026:16:48:12 +0000] \"GET /not-found HTTP/1.1\" 404 21 \"-\" \"-\"","service":"acquisitions-api","timestamp":"2026-02-11T16:48:12.103Z"}
