@@ -8,13 +8,11 @@ on:
 env:
   # Registry and Image Name
   REGISTRY: docker.io
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/acquisitions-app
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    environment: production
-    env:
-      IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/acquisitions-app
     permissions:
       contents: read
       packages: write
