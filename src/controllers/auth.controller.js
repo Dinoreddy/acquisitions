@@ -22,7 +22,7 @@ export const signup = async (req , res) => {
 
     } catch (error) {
         logger.error('Error in signUp' , error);
-        return res.status(500).json({ message : 'Internal Server Error' });
+        return res.status(500).json({ message : 'Internal Server Error' , error : error.message });
     }
 }
 

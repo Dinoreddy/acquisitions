@@ -43,7 +43,7 @@ export const CreateUser = async (user) => {
         return newUser[0];
     } catch (error) {
         logger.error(`Error creating user ${error}`);
-        throw new Error('Error creating user');
+        throw new Error(error.message);
     }
 }
 
