@@ -2,9 +2,9 @@ name: Tests
 
 on:
   push:
-    branches: [ "main", "staging" ]
+    branches: ['main', 'staging']
   pull_request:
-    branches: [ "main", "staging" ]
+    branches: ['main', 'staging']
 
 jobs:
   test:
@@ -15,42 +15,42 @@ jobs:
       NODE_OPTIONS: --experimental-vm-modules
       # Dummy URL for tests that don't need real DB connection or using mocks
       # If integration tests need a DB, you'd use a service container here
-      DATABASE_URL: postgres://user:password@localhost:5432/testdb 
+      DATABASE_URL: postgres://user:password@localhost:5432/testdb
       JWT_SECRET: test_secret
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'npm'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Run Tests
-      run: npm test -- --coverage
-    
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }} 
-      continue-on-error: true 
+      - name: Run Tests
+        run: npm test -- --coverage
 
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
-      with:
-        name: code-coverage-report
-        path: coverage/
-        retention-days: 30
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+        continue-on-error: true
 
-    - name: Test Summary
-      if: always()
-      run: |
-        echo "## Test Results" >> $GITHUB_STEP_SUMMARY
-        echo "✅ Tests completed" >> $GITHUB_STEP_SUMMARY
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: coverage/
+          retention-days: 30
+
+      - name: Test Summary
+        if: always()
+        run: |
+          echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Tests completed" >> $GITHUB_STEP_SUMMARY

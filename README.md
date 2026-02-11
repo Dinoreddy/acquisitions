@@ -7,7 +7,7 @@
 To run the application locally with Neon Local:
 
 1.  **Prerequisites**: Ensure you have Docker and Docker Compose installed.
-2.  **Environment**: 
+2.  **Environment**:
     - Copy `.env.development.example` to `.env`.
     - Fill in your `NEON_API_KEY` and `NEON_PROJECT_ID` from the Neon Console.
     - The `DATABASE_URL` is pre-configured to point to the local Neon proxy.

@@ -2,13 +2,13 @@ name: Docker Build and Push
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   workflow_dispatch:
 
 env:
   # Registry and Image Name
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/acquisitions-api
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/acquisitions-app
 
 jobs:
   build-and-push:

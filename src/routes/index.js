@@ -7,5 +7,4 @@ import { isAuthenticated } from '#middlewares/auth.middleware.js';
 router.use('/auth', authRoutes);
 router.use('/users', isAuthenticated, userRoutes);
 
-
 export default router;

@@ -17,9 +17,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(morgan('combined', { stream: { write: (message) => logger.info(message.trim()) } }));
+app.use(
+  morgan('combined', {
+    stream: { write: message => logger.info(message.trim()) },
+  })
+);
 
-app.use(securityMiddleware)
+app.use(securityMiddleware);
 
 app.get('/', (req, res) => {
   logger.info('Welcome to the Acquisitions API');
@@ -28,13 +32,13 @@ app.get('/', (req, res) => {
 
 app.get('/health', (req, res) => {
   logger.info('hello');
-  res.status(200).json({ status: 'ok', timestamp: new Date() , uptime : process.uptime()});
+  res
+    .status(200)
+    .json({ status: 'ok', timestamp: new Date(), uptime: process.uptime() });
 });
-
 
 // Routes
 app.use('/api', routes);
-
 
 // 404 Handler
 app.use((req, res) => {
